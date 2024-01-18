@@ -1,16 +1,16 @@
 <%- include ('partials/header.ejs') %>
-
-        <h2>Bienvenue sur My Secret Santa !</h2>
-        <p>
+    <div class="flex flex-col items-center w-1/2 bg-zinc-200 justify-around rounded-md" >
+        <h2 class="text-red-500 font-bold text-3xl">Bienvenue sur My Secret Santa !</h2>
+        <p class="px-8 text-xl">
            Cette application a été créée dans le but de faciliter le fameux tirage au sort 
            du Secret Santa, que ce soit en famille, entre amis ou entre collègues. 
            Ici pas besoin de petits papiers ou de main innocente,
            MySecretSanta garantie un tirage au sort complètement aléatoire, 
            et l'anonymat de chaque Secret Santa. MySecretSanta propose aussi à chaque participants
-           de compléter une liste de souhaits, orientant le choix du Secret Santa.
+           de compléter une liste de souhaits, orientant le choix du Secret Santa.<br> 
            Bref, tu connais le principe, alors donne moi le nom de chaque participant, le budget de cadeau,
            et laisse moi faire le reste !
         </p>
-        <a href="#">Commencer mon MySecretSanta</a>
-
+        <a class="w-96 text-2xl text-red-500 bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105" href="#">Commencer mon MySecretSanta</a>
+    </div>
  <%- include ('partials/footer.ejs') %>  
