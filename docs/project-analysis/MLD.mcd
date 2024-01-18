@@ -6,6 +6,6 @@
 member (id, firstname, lastname, email, password)
 draw (id, budget, #member(id))
 participant (id, firstname, lastname)
-whishlist (id, itemListe, #participant(id))
+wishlist (id, itemListe, #participant(id))
 draw_has_participant (id, #draw(id), #participant(id))
 ```
