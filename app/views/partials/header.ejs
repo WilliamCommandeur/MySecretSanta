@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Secret Santa</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="data:image" type="image/x-icon">
     <link rel="stylesheet" href="/css/style.css">
+    <title>My Secret Santa</title>
 </head>
-<body>
-    <header>
-        <h1>My Secret Santa</h1>
-        <nav>
-            <ul>
-                <li><a href="#">S'inscrire</a></li>
-                <li><a href="#">Se connecter</a></li>
+<body class="flex flex-col text-font">
+    <header class="w-full bg-red-500 flex h-32 justify-between items-center px-4">
+        <div>
+        <h1 class="title-font text-5xl text-lime-300 hover:cursor-pointer">My Secret Santa</h1>
+        <!-- <span>Votre tirage au sort complètement aléatoire, avec liste de souhaits, pour garantir un Secret Santa réussi.</span> -->
+        </div>
+        <nav class="w-1/4">
+            <ul class="flex justify-around text-2xl text-red-500">
+                <li class="bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105"><a href="#" class="">S'inscrire</a></li>
+                <li class="bg-lime-300 p-3 pt-1 rounded-2xl bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105"><a href="#">Se connecter</a></li>
             </ul>
         </nav>
     </header>
