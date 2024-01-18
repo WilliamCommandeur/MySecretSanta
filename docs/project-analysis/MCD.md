@@ -1,0 +1,13 @@
+# MCD
+
+---
+
+```
+Member: id, firstname, lastname, email, password
+TO MAKE, 0N MEMBER, 11 DRAW
+Draw: id, budget
+TO PARTICIPATE, 0N PARTICIPANT, 0N Draw
+Participant: id, firtname, lastname
+TO HAVE, 01 PARTICIPANT, 11 WHISHLIST
+Whishlist: id, itemList
+```
