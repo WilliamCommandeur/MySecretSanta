@@ -4,6 +4,7 @@ const express = require('express');
 const expressSession = require('express-session');
 const app = express();
 const router = require('./app/router');
+const userMiddleware = require('./middlewares/user');
 
 // Moteur de rendu EJS
 app.set('view engine', 'ejs');
@@ -17,6 +18,19 @@ app.set('views', viewsDirectory);
 
 // Fichiers statiques
 app.use(express.static(path.join(__dirname, 'public')));
+
+const sessionConfig = {
+        secret: process.env.SESSION_SECRET,
+        resave: true,
+        saveUninitialized: true,
+        cookie: {
+            maxAge: 1000 * 60 * 60, // 1H
+        },
+}
+
+app.use(expressSession(sessionConfig));
+
+app.use(userMiddleware);
 
 app.use(router);
 

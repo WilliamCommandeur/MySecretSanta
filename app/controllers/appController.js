@@ -1,4 +1,5 @@
 const appController = {
+    
     index (req, res) {
         res.render('index')
     },

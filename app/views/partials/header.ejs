@@ -11,13 +11,18 @@
 <body class="flex flex-col text-font h-screen">
     <header class="w-full bg-red-500 flex h-32 justify-between items-center px-4">
         <div>
-        <h1 class="title-font text-5xl text-lime-300 hover:cursor-pointer">My Secret Santa</h1>
+        <h1 class="title-font text-5xl text-lime-300 hover:cursor-pointer"><a href="/">My Secret Santa</a></h1>
         <!-- <span>Votre tirage au sort complètement aléatoire, avec liste de souhaits, pour garantir un Secret Santa réussi.</span> -->
         </div>
         <nav class="w-1/4">
             <ul class="flex justify-around text-2xl text-red-500">
-                <li class="bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105"><a href="/register" class="">S'inscrire</a></li>
-                <li class="bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105"><a href="#">Se connecter</a></li>
+                <% if (locals.user) { %>
+                    <li class="bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105"><a href="#" class="">Mon MySecretSanta</a></li>
+                    <li class="bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105"><a href="/logout">Se déconnecter</a></li>
+                <% } else { %>
+                    <li class="bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105"><a href="/register" class="">S'inscrire</a></li>
+                    <li class="bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105"><a href="/login">Se connecter</a></li>
+                <% } %>
             </ul>
         </nav>
     </header>

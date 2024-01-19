@@ -1,6 +1,12 @@
 <%- include ('partials/header') %>
 
 <form action="/register" method="POST" class="flex flex-col items-center w-1/2 bg-zinc-200 justify-around rounded-md text-xl">
+
+    <% if (locals.error) { %>
+        <div class="bg-red-200 border-2 border-red-500 p-3">
+            <p class="text-red-500"><%= error %></p>
+        </div>
+    <% } %>
     
     <fieldset class="flex flex-col">
         <label class="" for="firstname">Prénom</label>
@@ -23,7 +29,7 @@
     </fieldset>
 
     <fieldset class="flex flex-col">
-        <label class="" for="confirmation">Mot de passe</label>
+        <label class="" for="confirmation">Confirmation du mot de passe</label>
         <input class="" type="password" id="confirmation" name="password_confirm" placeholder="*********">
     </fieldset>
 
