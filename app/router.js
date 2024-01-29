@@ -13,4 +13,6 @@ router.post('/login', sessionController.login);
 
 router.get('/logout', sessionController.destroy);
 
+router.get('/draw', appController.displayDraw);
+
 module.exports = router;

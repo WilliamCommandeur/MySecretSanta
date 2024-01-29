@@ -16,7 +16,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node index.js"
+    "dev": "node index.js",
+    "db:create": "psql -U santa -d santa -f data/create-tables.sql"
   },
   "repository": {
     "type": "git",

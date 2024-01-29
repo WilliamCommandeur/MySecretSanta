@@ -26,7 +26,7 @@ const authController = {
             return;
         };
 
-        if (password.length < config.password.lentgh) {
+        if (password.length < config.password.length) {
             res.render('signup', { error: 'Le mot de passe indiqué est trop court'});
             return;
         };
