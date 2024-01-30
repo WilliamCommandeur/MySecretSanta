@@ -35,7 +35,7 @@ const authController = {
             res.render('signup', { error: 'La confirmation du mot de passe a échouée'});
             return;
         };
-
+        
         const salt = await bcrypt.genSalt(config.password.saltRound);
         const hash = await bcrypt.hash(password, salt);
 
