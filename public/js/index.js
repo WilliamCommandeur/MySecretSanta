@@ -14,8 +14,15 @@ function addParticipantToTable() {
     const row = document.createElement('tr');
     const cell = document.createElement('td');
     // J'ajoute à la cellule les classes Tailwind
-    cell.classList.add("text-dark", "border-b", "border-l", "border-[#E8E8E8]", "bg-[#F3F6FF]", "dark:bg-dark-3", "dark:border-dark", "dark:text-dark-7", "py-5", "px-2", "text-center", "text-base", "font-medium");
+    cell.classList.add("flex", "justify-around", "text-dark", "border-b", "border-l", "border-[#E8E8E8]", "bg-[#F3F6FF]", "dark:bg-dark-3", "dark:border-dark", "dark:text-dark-7", "py-1", "px-1", "text-center", "text-base", "font-medium");
     cell.textContent = participantName;
+    const icon = document.createElement('i');
+    const span = document.createElement('span');
+    span.classList.add("icon");
+    span.appendChild(icon);
+    icon.classList.add("fa-solid", "fa-square-minus", "fa-xl");
+    icon.setAttribute('style', "color:#ef4444")
+    cell.appendChild(span);
     // J'ajoute la cellule à la ligne, puis la ligne au tbody
     row.appendChild(cell);
     const tableBody = document.getElementById('t-body');

@@ -1,7 +1,7 @@
 <%- include ('partials/header') %>
     <% if (locals.user) { %>
 
-        <div class="flex flex-col items-center w-1/2 bg-zinc-200 justify-around rounded-md">
+        <div class="my-2 flex flex-col items-center w-1/2 bg-zinc-200 rounded-md">
             <div>
             <form action="" method="POST" id="add-budget">
             <fieldset class="px-8 text-xl">
@@ -11,34 +11,39 @@
             </form>
             <form action="" method="POST" id="add-to-table">
                 <fieldset class="px-8 text-xl">
-                    Ajouter un participant : <input name="participant" type="text">
+                    <label for="participant"> Ajouter un participant : </label>
+                    <input name="participant" type="text">
                     <button type="submit" class="w-30 text-2xl text-red-500 bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105">Ajouter</button>
                 </fieldset>
             </form>
             </div>
 
+            <form class="my-5 h-96 flex flex-auto flex-col items-center w-full bg-zinc-200 justify-around rounded-md">
+                    <div class="overflow-auto  w-5/6 h-full">
+                    <table class="w-full overflow-scroll">
+                        <thead class="w-30">
+                            <tr class="text-center">
+                                <th class="h-2 text-lime-300 border-b border-l border-[#E8E8E8] bg-red-500 dark:bg-dark-3 dark:border-dark dark:text-dark-7 py-1 px-1 text-center text-base font-medium">Participants :</th>
+                                <!-- <th class="w-1/6 min-w-[160px] border-l border-transparent py-4 px-3 text-lg font-medium text-white lg:py-7 lg:px-4">Ne peut pas tomber sur :</th> -->
+                            </tr>
+                        </thead>
+                        <tbody id="t-body">
+                            <tr></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td id="budget-cell" class="text-dark border-b border-l border-[#E8E8E8] bg-[#F3F6FF] dark:bg-dark-3 dark:border-dark dark:text-dark-7 py-1 px-1 text-center text-base font-medium">Budget : </td>
+                            </tr>
+                        </tfoot>
+                </table>
+                </div>
+                    <button type="submit" class="my-1 w-30 text-2xl text-red-500 bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105">Let's go !</button>
+                </form>
             
-            <table class="table-auto">
-                <th>
-                    <tr class="text-center bg-primary">
-                        <th class="w-1/6 min-w-[160px] border-l border-transparent py-4 px-3 text-lg font-medium text-white lg:py-7 lg:px-4">Participant :</th>
-                        <th class="w-1/6 min-w-[160px] border-l border-transparent py-4 px-3 text-lg font-medium text-white lg:py-7 lg:px-4">Ne peut pas tomber sur :</th>
-                    </tr>
-                </th>
-                <tbody id="t-body">
-                    
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td  class="text-dark border-b border-l border-[#E8E8E8] bg-[#F3F6FF] dark:bg-dark-3 dark:border-dark dark:text-dark-7 py-5 px-2 text-center text-base font-medium">Nombre de participants : </td>
-                        <td id="budget-cell" class="text-dark border-b border-l border-[#E8E8E8] bg-[#F3F6FF] dark:bg-dark-3 dark:border-dark dark:text-dark-7 py-5 px-2 text-center text-base font-medium">Budget : </td>
-                    </tr>
-                </tfoot>
-            </table>
             
         </div>
     <% } else { %>
-
+        
         <div class="flex flex-col items-center w-1/2 bg-zinc-200 justify-around rounded-md">
             <p class="px-8 text-xl">
                 Vous devez vous identifier pour avoir accès à cette page..
