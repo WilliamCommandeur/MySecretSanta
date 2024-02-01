@@ -5,13 +5,13 @@ class Participant extends Sequelize.Model {}
 
 Participant.init(
     {
-        firname: {
+        firstname: {
             type: DataTypes.TEXT,
             allowNull: false,
         },
         lastname: {
             type: DataTypes.TEXT,
-            allowNull: false,
+            // allowNull: false,
         },
     },
     {
