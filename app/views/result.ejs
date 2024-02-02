@@ -1,0 +1,16 @@
+<%- include ('partials/header.ejs') %>
+
+<div class="flex flex-col items-center w-1/2 bg-zinc-200 justify-around rounded-md" >
+    <form action="">
+    <label for="names-select">Je suis :</label>
+    <select name="names-select">
+        <% for (participant of draw.participants) { %>
+            <option value="<%= participant.id %>"><%= participant.firstname %></option>
+        <% } %>
+    </select>
+    <button type="submit">Voir mon tirage</button>
+    </form>
+</div>
+
+
+<%- include ('partials/footer.ejs') %>

@@ -2,6 +2,8 @@ const Member = require('../models/Member');
 const Draw = require('../models/Draw');
 const sequelize = require('sequelize');
 const Participant = require('../models/Participant');
+const drawController = require('../controllers/drawController');
+require('../models/index');
 
 const appController = {
     
@@ -17,7 +19,8 @@ const appController = {
         
     },
 
-    async showResult(req, res) {
+    async createDataFromForm(req, res) {
+        
         const { budget } = req.body;
         const memberId = req.session.user.id;
 
@@ -27,17 +30,19 @@ const appController = {
         });
 
         const participants = req.body.participantName;
-         participants.forEach(async (participant) => {
-             const newParticipant = await Participant.create({
-                 firstname: participant
-             })
-         });
-         console.log(participants);
-        
-        // console.log(req.body)
-        // console.log(req.body.participantName);
 
-        res.redirect('/')
+        for (participant of participants) {
+            await Participant.create({
+                firstname: participant,
+                draw_id: newDraw.id,
+            });
+        }
+
+        const draw = await Draw.findByPk(newDraw.id, {
+            include: 'participants'
+        });
+             
+        res.render('result', { draw })
     }
 };
 

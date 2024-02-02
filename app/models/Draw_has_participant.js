@@ -28,4 +28,4 @@ DrawHasParticipant.init(
     },
 );
 
-module.exports = DrawHasParticpant;
+module.exports = DrawHasParticipant;

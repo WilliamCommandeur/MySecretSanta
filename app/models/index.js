@@ -2,7 +2,7 @@ const Member = require('./Member');
 const Draw = require('./Draw');
 const Participant = require('./Participant');
 const Wishlist = require('./Wishlist');
-const DrawHasParticipant = require('./Draw_has_participant');
+// const DrawHasParticipant = require('./Draw_has_participant');
 
 // Associations
 
@@ -28,20 +28,16 @@ Wishlist.belongsTo(Participant, {
     as: 'owner',
 });
 
-// Draw et Participant : many-to-many
+// Draw et Participant : one-to-many
 
-Participant.belongsToMany(Draw, {
-    through: DrawHasParticipant,
-    as: 'draws',
-    foreignKey: 'participant_id',
-    otherKey: 'draw_id',
-});
-Draw.belongsToMany(Participant, {
-    through: DrawHasParticipant,
-    as: 'participants',
+Draw.hasMany(Participant, {
     foreignKey: 'draw_id',
-    otherKey: 'participant_id'
-});
+    as: 'participants'
+})
+Participant.belongsTo(Draw, {
+    foreignKey: 'draw_id',
+    as: 'draw',
+})
 
-module.exports = { Member, Draw, Participant, Wishlist, DrawHasParticipant };
+module.exports = { Member, Draw, Participant, Wishlist };
 

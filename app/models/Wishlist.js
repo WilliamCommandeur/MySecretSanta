@@ -17,6 +17,10 @@ Wishlist.init(
             },
         },
     },
+    {
+        sequelize,
+        tableName: 'wishlist'
+    }
 );
 
 module.exports = Wishlist;
