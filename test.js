@@ -1,12 +1,18 @@
-const Draw = require('./app/models/Draw');
-require('dotenv').config();
+const participants = ['William', 'Albert', 'Jean', 'Marie', 'Anne'];
 
-(async () => {
-    try {
-        const draw = await Draw.findByPk(1);
-        console.log(draw);
 
-    } catch (error) {
-        console.log(error);
-    }
-})();
+
+function draw(name) {
+    const newArray = participants.filter((participant) => participant !== name )
+    
+    
+    const result = newArray[0]
+    
+    return result
+};
+
+
+
+const test = draw('William');
+
+console.log(test);
