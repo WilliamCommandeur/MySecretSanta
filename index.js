@@ -5,6 +5,7 @@ const expressSession = require('express-session');
 const app = express();
 const router = require('./app/router');
 const userMiddleware = require('./middlewares/user');
+const { notFound } = require('./middlewares/errorHandler');
 
 // Moteur de rendu EJS
 app.set('view engine', 'ejs');
@@ -33,6 +34,10 @@ app.use(expressSession(sessionConfig));
 app.use(userMiddleware);
 
 app.use(router);
+
+// 404
+app.use(notFound);
+
 
 // Intégration des variables d'environnement à l'application
 app.set('port', process.env.PORT || 5000);

@@ -1,8 +1,7 @@
-const Member = require('../models/Member');
 const Draw = require('../models/Draw');
-const sequelize = require('sequelize');
+
 const Participant = require('../models/Participant');
-const drawController = require('../controllers/drawController');
+
 require('../models/index');
 
 const appController = {
@@ -13,10 +12,6 @@ const appController = {
 
     displayDraw(req, res) {
         res.render('draw')
-    },
-
-    validateParticipantTable(req, res) {
-        
     },
 
     async createDataFromForm(req, res) {
@@ -43,6 +38,12 @@ const appController = {
         });
              
         res.render('result', { draw })
+    },
+
+    async showResult(req, res) {
+        const drawId = req.params.id;
+        const draw = await Draw.findByPk(drawId);
+        
     }
 };
 
