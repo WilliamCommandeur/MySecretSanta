@@ -5,7 +5,11 @@ const expressSession = require('express-session');
 const app = express();
 const router = require('./app/router');
 const userMiddleware = require('./middlewares/user');
-const { notFound } = require('./middlewares/errorHandler');
+const { 
+    notFound,
+    devErrorHandler,
+    prodErrorHandler
+ } = require('./middlewares/errorHandler');
 
 // Moteur de rendu EJS
 app.set('view engine', 'ejs');
@@ -37,6 +41,13 @@ app.use(router);
 
 // 404
 app.use(notFound);
+// Si on est en local pour le dev, on veut  voir les détails des erreurs
+// if (app.get('env') === 'development') {
+app.use(devErrorHandler);
+// } else {
+    // //en prod, on ne veut qu'un message d'erreur générique
+    // app.use(prodErrorHandler);
+// }
 
 
 // Intégration des variables d'environnement à l'application

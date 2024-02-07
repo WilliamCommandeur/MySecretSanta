@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>My Secret Santa</title>
     <script src="https://kit.fontawesome.com/b3d05658f1.js" crossorigin="anonymous"></script>
-    <script defer src="/js/index.js"></script>
+    <% if (locals.user) {  %>
+        <script defer src="/js/index.js"></script>
+    <% } %>
+    <% if (locals.draw) { %>
+        <script defer src="/js/draw.js"></script>
+    <% } %>
 </head>
 <body class="flex flex-col text-font h-screen">
     <header class="w-full bg-red-500 flex h-32 justify-between items-center px-4">

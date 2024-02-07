@@ -1,8 +1,15 @@
-const participants = ['William', 'Albert', 'Jean', 'Marie', 'Anne'];
-// Je mélange aléatoirement les éléments du tableau
-const shuffledParticipants = participants.sort(() => Math.random() - 0.5);
+const Draw = require('./app/models/Draw');
+require ('./app/models/index');
 
-function draw(name) {
+
+
+
+async function draw(name) {
+    const draw = await Draw.findByPk(5);
+    const participants = draw.participant.name;
+    console.log(participants);
+// Je mélange aléatoirement les éléments du tableau
+    const shuffledParticipants = participants.sort(() => Math.random() - 0.5);
     // Pour chaque participant, je choisis le participant qui se situe à l'index suivant
     // Si le résultat est undefined, celà veut dire que le participant est le dernier élément du tableau
     // Dans ce cas je lui donne le premier élément du tableau

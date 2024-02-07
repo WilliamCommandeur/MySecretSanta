@@ -19,5 +19,24 @@ const notFound = (req, res, next) => {
     next(error);
 };
 
+const devErrorHandler = (err, req, res, next) => {
+    const statusCode = err.status || 500;
 
-module.exports = { notFound, catchErrors };
+    res.status(statusCode).render('error', {
+        message: err.message,
+        stack: err.stack,
+        status: statusCode,
+    });
+};
+
+const prodErrorHandler = (err, req, res, next) => {
+    const statusCode = err.status || 500;
+
+    res.status(statusCode).render('error', {
+        message: err.message,
+        stack: null,
+        status: null,
+    });
+};
+
+module.exports = { notFound, catchErrors, devErrorHandler, prodErrorHandler };

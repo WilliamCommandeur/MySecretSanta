@@ -1,7 +1,15 @@
 <%- include ('partials/header.ejs') %>
 
-<div class="flex flex-col items-center w-1/2 bg-zinc-200 justify-around rounded-md" >
-    <button class="w-96 text-2xl text-red-500 bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105"><a href="/result/<%= draw.id %>">Voir le résultat du tirage</a></button>
+<div class="flex flex-col items-center w-1/2 bg-zinc-200 justify-center rounded-md" >
+    <div>
+        <label for="name-select">Je suis :</label>
+        <select name="name-select" id="">
+            <% for (participant of draw.participants) { %>
+                <option value="<%= participant.id %>"><%= participant.firstname %></option>
+            <% } %>
+        </select>
+    </div>
+    <button class="bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105 text-red-500">Voir mon tirage</button>
 </div>
 
 
