@@ -5,7 +5,7 @@ const sessionController = require('./controllers/sessionController');
 const { catchErrors } = require('../middlewares/errorHandler');
 const drawController = require('./controllers/drawController');
 
-router.get('/', catchErrors(appController.index));
+router.get('/', appController.index);
 
 router.get('/register', catchErrors(authController.registerForm));
 router.post('/register', catchErrors(authController.register));

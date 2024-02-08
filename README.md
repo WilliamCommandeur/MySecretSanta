@@ -2,18 +2,15 @@
 
 ---
 
-Hi there!  
-Here is the first project that I built entirely on my own, using NodeJS, PostgreSQL and TailwindCSS. It's an application which generate a random draw for Secret Santa moments.
+Here is the first project that I built entirely on my own, using NodeJS, PostgreSQL and TailwindCSS. It's an application which generate a random draw for Secret Santa moments (wishlist feature is not yet implemented).
 
 ---  
 To use it, install the dependancies :  
 ``` 
 npm install .
 ```
-You need to create a database, I used PostgreSQL. You have access to some docs there :  
- [MCD with Mocodo](https://www.mocodo.net/?mcd=eNpdjkEOgjAQRfc9xRygC9m6a4SERgQCRdajVJmkIGlruL5UlER385L57__GabsH6jjcyDo_4qA5GPxeekAyHCZ0bn7YjqkCTuKYcNjl0NRJxSGKIK5Ey2KL8yq6PLu79uG1FJWSB1kKtSY2ztWbQ4aVaD1dacLRb0P-dgRXKs5BEv1KlvY2lXWayVqxtifXG3IfD3k9ZAuxF4q6Rdg=)  
- [MLD](docs/project-analysis/MLD.mcd)  
- 
+You need to create a database, I used PostgreSQL. You have access to the MCD there :  
+ [MCD with Mocodo](https://www.mocodo.net/?mcd=eNpljjsOgzAQRHufYg_gIrTpLEDCEgJkTFxvghNW4ifbEdcPzq9Iulnp7ZvpvHVHoJ7DlZwPM06Ww4ifZCekkcOK3m-L65muIVW50DmHQwVdmysOSQKZEoZlDreX6nzvbzZEuBCniCbQCKVlKhtR6edrhFmDLtCFVpzDd8PPhCipTfXv2FtNIduilK1mZiA_jOTfGgp2KveLsQcuokQZ)
  
  In the psql terminal :
  ```
@@ -26,12 +23,10 @@ npm run db:create
 ```
 Finally, you can launch the application :
 ```
-npm run dev
+npm run start
 ```
 
 
-You need to register to use the features. You can provide fake informations, you just need to put the same informations to log in.  Enjoy !
+You need to register to use the features. You can provide fake informations, you just need to put the same informations to log in.
 
 ---
-
-I start in web development, and I'm interested in all opportunities that will help me evolve. You can contact me [here](https://www.linkedin.com/in/william-commandeur/). 

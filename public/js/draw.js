@@ -5,8 +5,12 @@
 //     const result = array[array.indexOf(name) + 1] ?? array[0];
 //     return result;
 // }
-function test(req, res) {
-    console.log(draw)
-    console.log(locals)
+let namesArray = [];
+const participantsName = document.querySelectorAll('input[type="hidden"]');
+for(element of participantsName) {
+    namesArray.push(element.value);
 }
-test();
+
+console.log(namesArray);
+
+

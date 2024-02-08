@@ -10,6 +10,9 @@
         </select>
     </div>
     <button class="bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105 text-red-500">Voir mon tirage</button>
+    <% for (participant of draw.participants) { %>
+        <input type="hidden" name="" id="<%= participant.id %>" value="<%= participant.firstname %>">
+    <% } %>
 </div>
 
 
