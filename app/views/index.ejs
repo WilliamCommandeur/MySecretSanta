@@ -1,7 +1,7 @@
 <%- include ('partials/header.ejs') %>
-    <div class="flex flex-col items-center w-1/2 bg-zinc-200 justify-around rounded-md overflow-scroll" >
-        <h2 class="text-red-500 font-bold text-3xl">Bienvenue sur My Secret Santa !</h2>
-        <p class="px-8 text-xl">
+    <div class="flex flex-col items-center  w-full sm:w-2/3 lg:w-1/2 bg-zinc-200 justify-around rounded-md overflow-scroll" >
+        <h2 class="text-red-500 font-bold text-xl px-2 sm:text-3xl">Bienvenue sur My Secret Santa !</h2>
+        <p class=" px-2 sm:px-8 text-md sm:text-xl">
            Cette application a été créée dans le but de faciliter le fameux tirage au sort 
            du Secret Santa, que ce soit en famille, entre amis ou entre collègues. 
            Ici pas besoin de petits papiers ou de main innocente,
@@ -12,9 +12,9 @@
            et laisse moi faire le reste !
         </p>
         <% if (locals.user) { %>
-            <a class="w-96 text-2xl text-red-500 bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105" href="/draw">Commencer mon MySecretSanta</a>
+            <a class="md:w-96 text-2xl text-red-500 bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105" href="/draw">Commencer mon MySecretSanta</a>
         <% } else { %>
-            <a class="w-96 text-2xl text-red-500 bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105" href="/login">Commencer mon MySecretSanta</a>
+            <a class="w-1/2 md:w-96 text-center text-md md:text-2xl text-red-500 bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105" href="/login">Commencer mon MySecretSanta</a>
         <% } %>
     </div>
  <%- include ('partials/footer.ejs') %>  
