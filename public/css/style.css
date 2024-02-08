@@ -13,3 +13,9 @@
 .title-font {
     font-family: 'Anton', sans-serif;
 }
+
+.hover:hover {
+    cursor: pointer;
+    font-weight: bold;
+    transform: scale(1.05);
+}
