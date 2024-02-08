@@ -61,20 +61,8 @@ const drawController = {
                 next();
             }
             
-            // Je crée un tableau dans lequel j'ajoute le nom de chaque participant
-            let participantsArray = [];
-            for (participant of draw.participants) {
-                participantsArray.push(participant.firstname)    
-            }
-            // Je mélange alétoirement le tableau de noms
-            const shuffledArray = participantsArray.sort(() => Math.random() - 0.5);
-            for (participant of draw.participants) {
-                console.log(`${participant.firstname} : ${drawController.generateDraw(participant.firstname, shuffledArray)}`);
-            }
-
             res.render('result', { draw })
 
-            
     }
 
 }

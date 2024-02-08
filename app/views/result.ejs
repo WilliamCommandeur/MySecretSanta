@@ -1,18 +1,19 @@
 <%- include ('partials/header.ejs') %>
 
 <div class="flex flex-col items-center  w-full sm:w-2/3 lg:w-1/2 bg-zinc-200 justify-around rounded-md overflow-auto" >
-    <div>
-        <label for="name-select">Je suis :</label>
-        <select name="name-select" id="">
-            <% for (participant of draw.participants) { %>
-                <option value="<%= participant.id %>"><%= participant.firstname %></option>
-            <% } %>
-        </select>
-    </div>
-    <button class="bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105 text-red-500">Voir mon tirage</button>
-    <% for (participant of draw.participants) { %>
-        <input type="hidden" name="" id="<%= participant.id %>" value="<%= participant.firstname %>">
-    <% } %>
+    
+        <form>
+            <div class="my-3">
+                <label for="name-select">Je suis :</label>
+                <select name="name-select" id="">
+                    <% for (participant of draw.participants) { %>
+                        <option value="<%= participant.firstname %>"><%= participant.firstname %></option>
+                        <% } %>
+                    </select>
+                </div>
+                <button type="submit" class="bg-lime-300 p-3 pt-1 rounded-2xl hover:cursor-pointer hover:font-bold hover:scale-105 text-red-500 animate__animated animate__heartBeat animate__infinite">Voir mon tirage</button>
+        </form>
+
 </div>
 
 
