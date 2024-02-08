@@ -14,9 +14,10 @@ You need to create a database, I used PostgreSQL. You have access to the MCD the
  
  In the psql terminal :
  ```
- CREATE ROLE santa WITH LOGIN PASSWORD 'santa';
- CREATE DATABASE santa OWNER santa;
+ CREATE ROLE username WITH LOGIN PASSWORD 'password';
+ CREATE DATABASE database_name OWNER username;
  ```
+Change the .env-example in .env and fill it with your own informations  
 Then you can run the script to create tables :
 ```
 npm run db:create
