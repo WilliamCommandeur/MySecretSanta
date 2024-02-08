@@ -2,7 +2,7 @@
 
 ---
 
-Here is the first project that I built entirely on my own, using NodeJS, PostgreSQL and TailwindCSS. It's an application which generate a random draw for Secret Santa moments (wishlist feature is not yet implemented).
+Here is the first project that I built entirely on my own, using Node.js, PostgreSQL and TailwindCSS. It's an application which generate a random draw for Secret Santa moments (wishlist feature is not yet implemented).
 
 ---  
 To use it, install the dependancies :  
