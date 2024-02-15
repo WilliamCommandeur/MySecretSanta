@@ -51,7 +51,7 @@ const drawController = {
         return result;
     },
     
-    async showResult(req, res, next) {
+    async choseParticipant(req, res, next) {
         
             const drawId = req.params.id;
             const draw = await Draw.findByPk(drawId, {
@@ -61,10 +61,25 @@ const drawController = {
                 next();
             }
             
-            res.render('result', { draw })
+            res.render('result', { draw });
+    },
 
-    }
+    async showResult(req, res, next) {
+
+        const participantId = req.body.participantId;
+        const drawId = req.params.id;
+        console.log(participantId)
+        const participant = await Participant.findByPk(participantId);
+        const draw = await Draw.findByPk(drawId, {
+            include: 'participants',
+        });
+
+        console.log("participant");
+        console.log(draw.participants);
+        },
 
 }
+
+
 
 module.exports = drawController;

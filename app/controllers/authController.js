@@ -5,7 +5,7 @@ const Member = require('../models/Member');
 
 const authController = {
 
-    registerForm(req, res) {
+    async registerForm(req, res) {
         res.render('signup')
     },
 

@@ -9,15 +9,13 @@ To use it, install the dependancies :
 ``` 
 npm install .
 ```
-You need to create a database, I used PostgreSQL. You have access to the MCD there :  
- [MCD with Mocodo](https://www.mocodo.net/?mcd=eNpljjsOgzAQRHufYg_gIrTpLEDCEgJkTFxvghNW4ifbEdcPzq9Iulnp7ZvpvHVHoJ7DlZwPM06Ww4ifZCekkcOK3m-L65muIVW50DmHQwVdmysOSQKZEoZlDreX6nzvbzZEuBCniCbQCKVlKhtR6edrhFmDLtCFVpzDd8PPhCipTfXv2FtNIduilK1mZiA_jOTfGgp2KveLsQcuokQZ)
- 
+You need to create a database, I used PostgreSQL.
  In the psql terminal :
  ```
- CREATE ROLE username WITH LOGIN PASSWORD 'password';
- CREATE DATABASE database_name OWNER username;
+ CREATE ROLE santa WITH LOGIN PASSWORD 'santa';
+ CREATE DATABASE santa OWNER santa;
  ```
-Change the .env-example in .env and fill it with your own informations  
+Change the .env-example in .env
 Then you can run the script to create tables :
 ```
 npm run db:create

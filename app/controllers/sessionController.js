@@ -5,7 +5,7 @@ const { config } = require('../../config');
 
 const sessionController = {
     
-    loginForm(req, res) {
+    async loginForm(req, res) {
         res.render('login');
     },
 
@@ -40,7 +40,7 @@ const sessionController = {
         res.redirect('/');
     },
 
-    destroy(req, res) {
+    async destroy(req, res) {
         req.session.user = false;
         
         req.session.destroy();

@@ -2,12 +2,12 @@
 
 <div class="flex flex-col items-center  w-full sm:w-2/3 lg:w-1/2 bg-zinc-200 justify-around rounded-md overflow-auto" >
     
-        <form>
+        <form method="POST">
             <div class="my-3">
-                <label for="name-select">Je suis :</label>
-                <select name="name-select" id="">
+                <label for="participantId">Je suis :</label>
+                <select name="participant-id" id="">
                     <% for (participant of draw.participants) { %>
-                        <option value="<%= participant.firstname %>"><%= participant.firstname %></option>
+                        <option value="<%= participant.id %>"><%= participant.firstname %></option>
                         <% } %>
                     </select>
                 </div>

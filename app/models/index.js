@@ -2,7 +2,7 @@ const Member = require('./Member');
 const Draw = require('./Draw');
 const Participant = require('./Participant');
 const Wishlist = require('./Wishlist');
-// const DrawHasParticipant = require('./Draw_has_participant');
+
 
 // Associations
 

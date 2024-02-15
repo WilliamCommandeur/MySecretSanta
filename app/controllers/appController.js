@@ -3,11 +3,11 @@ const Draw = require('../models/Draw');
 
 const appController = {
     
-    index (req, res) {
+    async index (req, res) {
         res.render('index')
     },
 
-    displayDraw(req, res) {
+    async displayDraw(req, res) {
         res.render('draw')
     },
 
