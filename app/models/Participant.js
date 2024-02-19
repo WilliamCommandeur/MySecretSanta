@@ -10,7 +10,7 @@ Participant.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        lastname: {
+        result_name: {
             type: DataTypes.TEXT,
             // allowNull: false,
         },

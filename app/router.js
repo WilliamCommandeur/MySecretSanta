@@ -21,6 +21,7 @@ router.post('/draw', catchErrors(drawController.createDraw));
 router.get('/result/:id', catchErrors(drawController.choseParticipant));
 router.post('/result/:id', catchErrors(drawController.showResult));
 
+router.get('/result/:drawid/:participantid', catchErrors(drawController.displayResult))
 
 
 
