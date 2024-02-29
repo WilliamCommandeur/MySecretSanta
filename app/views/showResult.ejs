@@ -1,0 +1,20 @@
+<%- include ('partials/header.ejs') %>
+
+<div class="flex flex-col items-center  w-full sm:w-2/3 lg:w-1/2 bg-zinc-200 justify-around rounded-md overflow-auto" >
+
+    <% if (locals.participant) { %>
+
+        <p>Vous devez offrir un cadeau à : <%= participant.result_name %></p>
+
+    <% } else { %>
+
+        <p>Désolé, vous n'avez pas accès à cette page...</p>
+
+    <% } %>
+
+
+
+</div>
+
+
+<%- include ('partials/footer.ejs') %>

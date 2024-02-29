@@ -31,5 +31,10 @@
   "bugs": {
     "url": "https://github.com/WilliamCommandeur/MySecretSanta/issues"
   },
-  "homepage": "https://github.com/WilliamCommandeur/MySecretSanta#readme"
+  "homepage": "https://github.com/WilliamCommandeur/MySecretSanta#readme",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1"
+  }
 }
