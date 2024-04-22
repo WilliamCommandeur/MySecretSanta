@@ -60,16 +60,11 @@ const drawController = {
     res.render("choseParticipant", { draw });
   },
 
-  async showResult(req, res, next) {
-    // Je récupère l'id du participant sélectionné grâce au form
+  async showResult(req, res) {
     const participantId = req.body.participantId;
-    // Je récupère l'id du draw grâce à l'URL
     const drawId = req.params.id;
-		console.log(participantId);
-		console.log(req.body);
     const participant = await Participant.findByPk(participantId);
-		console.log(participant);
-
+	
     const draw = await Draw.findByPk(drawId, {
       include: "participants",
     });

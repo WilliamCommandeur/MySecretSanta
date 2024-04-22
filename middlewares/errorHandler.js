@@ -15,7 +15,6 @@ const notFound = (req, res, next) => {
 
     error.status = 404;
 
-    // * quand on appelle next avec un argument, express lève une erreur : cette erreur on doit l'intercepter
     next(error);
 };
 
