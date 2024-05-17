@@ -11,17 +11,15 @@ const {
     prodErrorHandler
  } = require('./middlewares/errorHandler');
 
-// Moteur de rendu EJS
+
 app.set('view engine', 'ejs');
 
-// Pour accéder aux données d'un formulaire POST
+
 app.use(express.urlencoded({ extended: true }));
 
-// Pour mitiger une attaque où le chemin de dossier serait compromis
 const viewsDirectory = path.join(__dirname, '/app/views');
 app.set('views', viewsDirectory);
 
-// Fichiers statiques
 app.use(express.static(path.join(__dirname, 'public')));
 
 const sessionConfig = {
@@ -39,18 +37,11 @@ app.use(userMiddleware);
 
 app.use(router);
 
-// 404
+
 app.use(notFound);
-// Si on est en local pour le dev, on veut  voir les détails des erreurs
-// if (app.get('env') === 'development') {
+
 app.use(devErrorHandler);
-// } else {
-    // //en prod, on ne veut qu'un message d'erreur générique
-    // app.use(prodErrorHandler);
-// }
 
-
-// Intégration des variables d'environnement à l'application
 app.set('port', process.env.PORT || 5000);
 app.set('base_url', process.env.BASE_URL || 'http://localhost');
 
